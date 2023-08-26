@@ -1,6 +1,10 @@
 let tasksAdded = [];
 
 let tasksContainer = document.getElementById('task-container')
+let quoteText = document.getElementById('quote');
+let authorText = document.getElementById('author');
+
+// newQuote();
 
 function displayTasks() {
   let taskList = document.createElement('div');
@@ -93,3 +97,28 @@ function changeTheme(color) {
 
   document.body.style.backgroundColor = colorMap[color];
 }
+
+let getNewQuote = async () => {
+  //api for quotes
+  // var url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
+  var url = "https://api.quotable.io/random"
+  // var url = "https://type.fit/api/quotes";
+  //fetch data from api
+  let response = await fetch(url);
+  //convert response to json and store it in quotes array
+  let quoteData = await response.json();
+  // Generates a random number between 0 and the length of the quotes array
+  // let indx = Math.floor(Math.random()*allQuotes.length);
+  //Store the quote present at the randomly generated index
+  let quote = quoteData.content;
+  //Store the author of the respective quote
+  let author = quoteData.author;
+  if(author ==null)
+    {
+        author = "Anonymous";
+    }
+  //function to dynamically display the quote and the author
+  quoteText.innerHTML = quote;
+  authorText.innerHTML = "- " + author + " -";
+}
+getNewQuote();

@@ -84,7 +84,14 @@ body {
 
 .quote-display p.author {
   font-size: 16px;
-  text-decoration: underline;
+  font-weight: 100;
+  color: whitesmoke;
+  border: solid 2px #4f332c;
+  width: 150px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #4f332c;
+  margin-top: 10px;
 }
 
 .icon-container-hat {
@@ -244,7 +251,7 @@ input[type=checkbox]:checked + p{
 .edit-field{
   border: none;
   outline: none;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #4f332c;
   background: transparent;
