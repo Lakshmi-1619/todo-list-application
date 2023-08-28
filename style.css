@@ -13,9 +13,13 @@ body {
   background-color: #eee6be;
 }
 
-.head-section {
+.body-section {
   display: flex;
   justify-content: space-around;
+}
+
+.main-section {
+  
 }
 
 /* theme changing section */
@@ -43,7 +47,7 @@ body {
 .color-container {
   background-color: whitesmoke;
   padding: 10px;
-  width: 260px;
+  width: 300px;
   border-radius: 10px;
   border:solid 2px #4f332c;
   margin-top: 10px;
@@ -105,7 +109,7 @@ body {
 
 /* Task input section */
 .container {
-  max-width: 600px;
+  width: 600px;
   padding: 20px;
 }
 
@@ -153,7 +157,7 @@ h1 {
     transform: translate(0, 3px);
 }
 
-.task {
+/* .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -162,7 +166,7 @@ h1 {
   border-radius: 5px;
   margin-bottom: 5px;
   background-color: #f5f5f5;
-}
+} */
 
 /* Write something - alert section */
 .writeSomething{
@@ -171,23 +175,35 @@ h1 {
 }
 
 .writeSomethingAlert{
-  justify-content: space-between;
   width: 560px;
-  padding: 15px;
-  margin: auto;
   border-radius: 5px;
   align-items: center;
   color: #4f332c;
   font-size: 18px;
   font-weight: bold;
   color: #4f332c;
+  margin-left: 20px;
+}
 
+/* Write 4 or more words - alert section */
+.wordCount {
+  display: none;
+}
+
+.wordCountAlert{
+  width: 560px;
+  border-radius: 5px;
+  align-items: center;
+  color: #4f332c;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4f332c;
+  margin-left: 20px;
 }
 
 /* tasks display section */
 .task-container {
-  margin-left: 510px;
-  max-width: 475px;
+  padding: 20px;
 }
 
 .task-list{

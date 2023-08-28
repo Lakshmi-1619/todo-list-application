@@ -44,7 +44,7 @@ function displayTasks() {
   iconContainer.appendChild(deleteIcon);
 }
 
-function typeSomethingAlert(){
+function writeSomethingAlert(){
   let alert = document.getElementById('writeSomethingAlert');
   alert.classList.remove('writeSomething');
   alert.classList.add('writeSomethingAlert');
@@ -55,11 +55,29 @@ function typeSomethingAlert(){
   }, 3000);
 }
 
+function wordCountAlert(){
+  let alert = document.getElementById('wordCountAlert');
+  alert.classList.remove('wordCount');
+  alert.classList.add('wordCountAlert');
+
+  setTimeout(() => {
+    alert.classList.remove('wordCountAlert');
+    alert.classList.add('wordCount');
+  }, 3000);
+}
+
 function addTask() {
   let tasks = document.getElementById("todo-input").value;
+  let inputWords = tasks.trim().split(/\s+/);
+  let wordCount = inputWords.length;
   if (tasks=="") {
-    typeSomethingAlert();
-  } else {
+    writeSomethingAlert();
+  } 
+  else if (wordCount <= 3) {
+    wordCountAlert();
+  }
+  
+  else {
     tasksAdded.push(tasks);
     displayTasks();
     document.getElementById("todo-input").value = ""; 
