@@ -16,8 +16,9 @@ function displayTasks() {
   let taskCheckbox = document.createElement('INPUT');
   taskCheckbox.setAttribute("type", "checkbox");
 
-  let taskText = document.createElement('P');
+  let taskText = document.createElement('p');
   taskText.innerHTML = tasksAdded[tasksAdded.length-1];
+  console.log(taskText)
 
   let iconContainer = document.createElement('div');
   iconContainer.classList.add('edit-delete-icons');
@@ -84,6 +85,12 @@ function editTask(taskText) {
       
     })
 }
+
+// function countWords(taskInput) {
+//   const inputArray = str.split(' ');
+//   return inputArray.filter(word => word !== '').length;
+// }
+// console.log(countWords(taskInput));
 
 function changeTheme(color) {
   var colorMap = {
