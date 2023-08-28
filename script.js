@@ -73,7 +73,7 @@ function addTask() {
   if (tasks=="") {
     writeSomethingAlert();
   } 
-  else if (wordCount <= 3) {
+  else if (wordCount < 3) {
     wordCountAlert();
   }
   
@@ -81,6 +81,7 @@ function addTask() {
     tasksAdded.push(tasks);
     displayTasks();
     document.getElementById("todo-input").value = ""; 
+    console.log(tasksAdded);
     }
 }
 
@@ -100,15 +101,8 @@ function editTask(taskText) {
       newText.innerText = editedText;
 
       editMode.replaceWith(newText);
-      
     })
 }
-
-// function countWords(taskInput) {
-//   const inputArray = str.split(' ');
-//   return inputArray.filter(word => word !== '').length;
-// }
-// console.log(countWords(taskInput));
 
 function changeTheme(color) {
   var colorMap = {
