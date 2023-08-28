@@ -8,18 +8,21 @@
   font-family: 'Architects Daughter', cursive;
 }
 
+.title {
+  color: #4f332c;
+  text-align: center;
+  padding: 40px;
+  font-size: larger;
+}
+
 /* Base Styles */
 body {
-  background-color: #eee6be;
+  background-color: #bdb4d5;
 }
 
 .body-section {
   display: flex;
   justify-content: space-around;
-}
-
-.main-section {
-  
 }
 
 /* theme changing section */
@@ -113,10 +116,11 @@ body {
   padding: 20px;
 }
 
-h1 {
+h2 {
   text-align: center;
   color: #4f332c;
   margin-bottom: 20px;
+  font-size: 25px;
 }
 
 .todo-list {
