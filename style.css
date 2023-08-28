@@ -126,6 +126,10 @@ h1 {
   padding: 20px;
 }
 
+.input-flex {
+  display: flex;
+}
+
 .todo-input {
   color: #5e3838;
   font-size: 18px;
@@ -140,6 +144,20 @@ h1 {
 
 .todo-input:focus{
     outline: none;
+}
+
+.date-time-input {
+  padding: 10px;
+  height: 40px;
+  width: 300px;
+  background: transparent;
+  border: none;
+  border-bottom: solid 2px #4f332c;
+  margin-left: 20px;
+  margin-top: 6px;
+  color: #4f332c;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .add-btn {
