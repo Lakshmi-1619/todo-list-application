@@ -122,16 +122,20 @@ let getNewQuote = async () => {
   var url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
   // var url = "https://type.fit/api/quotes"
   // var url = "  https://dummyjson.com/quotes"
+  
   //fetch data from api
   let response = await fetch(url);
+  
   //convert response to json and store it in quotes array
   let quoteData = await response.json();
+  
   // Generates a random number between 0 and the length of the quotes array
-  // let indx = Math.floor(Math.random()*allQuotes.length);
+  let index = Math.floor(Math.random() * quoteData.length);
+  
   //Store the quote present at the randomly generated index
-  let quote = quoteData.content;
+  let quote = quoteData[index].text;
   //Store the author of the respective quote
-  let author = quoteData.author;
+  let author = quoteData[index].author;
   if(author ==null)
     {
         author = "Anonymous";
