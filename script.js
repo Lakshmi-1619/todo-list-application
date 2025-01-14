@@ -130,12 +130,12 @@ let getNewQuote = async () => {
   let quoteData = await response.json();
   
   // Generates a random number between 0 and the length of the quotes array
-  let index = Math.floor(Math.random() * quoteData.length);
+  // let index = Math.floor(Math.random() * quoteData.length);
   
   //Store the quote present at the randomly generated index
-  let quote = quoteData[index].text;
+  let quote = quoteData.text;
   //Store the author of the respective quote
-  let author = quoteData[index].author;
+  let author = quoteData.author;
   if(author ==null)
     {
         author = "Anonymous";
