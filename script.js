@@ -130,19 +130,20 @@ let getNewQuote = async () => {
   // Generate a random index based on the length of the quotes array
   let randomIndex = Math.floor(Math.random() * quotesArray.length);
 
-  // Store the quote and author from the randomly generated index
-  let quote = quotesArray[randomIndex].text;
-  let author = quotesArray[randomIndex].author;
+  // Get the quote and author from the randomly selected object
+  let selectedQuote = quotesArray[randomIndex];
+  let quote = selectedQuote.text;
+  let author = selectedQuote.author;
 
   // Handle case where author is null
   if (!author) {
     author = "Anonymous";
   }
 
-  // Function to dynamically display the quote and the author
+  // Display the quote and author in the DOM
   quoteText.innerHTML = `"${quote}"`;
   authorText.innerHTML = `- ${author}`;
 };
 
-// Fetch and display the new quote
+// Fetch and display a new quote
 getNewQuote();
