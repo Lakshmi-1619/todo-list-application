@@ -119,8 +119,8 @@ function changeTheme(color) {
 
 let getNewQuote = async () => {
   //api for quotes
-  // var url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
-  var url = "https://type.fit/api/quotes"
+  var url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
+  // var url = "https://type.fit/api/quotes"
   // var url = "  https://dummyjson.com/quotes"
   //fetch data from api
   let response = await fetch(url);
