@@ -118,31 +118,38 @@ function changeTheme(color) {
 }
 
 let getNewQuote = async () => {
-  // API for quotes
+  // URL for the quotes API
   var url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
 
   // Fetch data from the API
   let response = await fetch(url);
 
-  // Convert response to JSON and store it in the quotes array
+  // Convert response to JSON
   let quotesArray = await response.json();
 
-  // Generate a random index based on the length of the quotes array
-  let randomIndex = Math.floor(Math.random() * quotesArray.length);
+  // Ensure we fetched an array and it has content
+  if (Array.isArray(quotesArray) && quotesArray.length > 0) {
+    // Generate a random index
+    let randomIndex = Math.floor(Math.random() * quotesArray.length);
 
-  // Get the quote and author from the randomly selected object
-  let selectedQuote = quotesArray[randomIndex];
-  let quote = selectedQuote.text;
-  let author = selectedQuote.author;
+    // Access the selected quote and author
+    let selectedQuote = quotesArray[randomIndex];
+    let quote = selectedQuote.text;
+    let author = selectedQuote.author;
 
-  // Handle case where author is null
-  if (!author) {
-    author = "Anonymous";
+    // Fallback for undefined or null author
+    if (!author) {
+      author = "Anonymous";
+    }
+
+    // Display the quote and author in the DOM
+    quoteText.innerHTML = `"${quote}"`;
+    authorText.innerHTML = `- ${author}`;
+  } else {
+    // Handle empty array case
+    quoteText.innerHTML = "No quotes available.";
+    authorText.innerHTML = "";
   }
-
-  // Display the quote and author in the DOM
-  quoteText.innerHTML = `"${quote}"`;
-  authorText.innerHTML = `- ${author}`;
 };
 
 // Fetch and display a new quote
